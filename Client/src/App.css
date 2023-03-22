@@ -12,7 +12,7 @@
   margin: 0 auto;
   /* border: 1px solid #e6e6e6; */
   padding: 40px 25px;
-  margin-top: 4px;
+  margin-top: 2px;
   font-size: 25px;
   color: white;
 }
@@ -66,14 +66,18 @@
   text-align: center;
 }
 .navbutton {
-  background-color: #040720;
+  background-color: #161b22;;
   font-size: 20px;
   font-family: "Poppins", sans-serif;
   border-radius: 5px;
   cursor: pointer;
   text-align: center;
   margin-left: 150px;
-  color: white;
+  color:#61dafb;
+  border: none;
+}
+.navbutton:hover {
+  opacity: 0.5;
 }
 
 .img {
