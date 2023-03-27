@@ -8,6 +8,7 @@ import NftProf from './Components/NftProf.tsx';
 import Metadata from './Components/Metadata';
 import Home from "./Components/Home";
 import Dashboard from "./Components/Dashboard";
+import Splitmerge from "./Components/Splitmerge";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -23,6 +24,7 @@ root.render(
           <Route path="NftProf" element={<NftProf />} />
           <Route path="Metadata" element={<Metadata/>} />
           <Route path="Dashboard" element={<Dashboard/>} />
+          <Route path="Splitmerge" element={<Splitmerge/>} />
         </Route>
       </Routes>
       {/* </div> */}

@@ -8,7 +8,7 @@ function App() {
     <>
       <Header></Header>
       
-      <div style={{ flexDirection: "row", marginLeft: "250px" }}>
+      <div style={{ flexDirection: "row", marginLeft: "100px" }}>
         <button className="navbutton" onClick={() => navigate("/Home")}>
           Home
         </button>
@@ -21,6 +21,9 @@ function App() {
 
         <button className="navbutton" onClick={() => navigate("/Metadata")}>
           Create NFT
+        </button>
+        <button className="navbutton" onClick={() => navigate("/Splitmerge")}>
+          Split/Merge
         </button>
       </div>
       <Outlet />
