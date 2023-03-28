@@ -25,7 +25,6 @@
   font-weight: bold;
   color: white;
   text-align: center;
-  /* background-color: #040720; */
 }
 
 .subhead {
@@ -66,14 +65,14 @@
   text-align: center;
 }
 .navbutton {
-  background-color: #161b22;;
+  background-color: #161b22;
   font-size: 20px;
   font-family: "Poppins", sans-serif;
   border-radius: 5px;
   cursor: pointer;
   text-align: center;
   margin-left: 150px;
-  color:#61dafb;
+  color: #61dafb;
   border: none;
 }
 .navbutton:hover {
