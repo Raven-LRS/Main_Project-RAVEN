@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route,Navlink } from "react-router-dom";
 import App from './Components/App';
 import NftProf from './Components/NftProf.tsx';
 import Metadata from './Components/Metadata';

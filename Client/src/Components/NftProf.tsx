@@ -15,6 +15,8 @@ interface Data {
 export default function NftProf() {
   // const nftcontract = new web3.eth.Contract(abi, contract);
   // const [sender, setsender] = useState();
+  // let token1 = []
+  // token1 = props.tok;
   const [data, setData] = useState<Data>();
   const [btnpp, setbtnpp] = useState(false);
   const fetchJson = () => {
@@ -28,6 +30,7 @@ export default function NftProf() {
       .catch((e: Error) => {
         console.log(e.message);
       });
+    // console.log(token1[0])
   };
   useEffect(() => {
     fetchJson();

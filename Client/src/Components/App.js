@@ -15,9 +15,6 @@ function App() {
         <button className="navbutton" onClick={() => navigate("/Dashboard")}>
           Dashboard
         </button>
-        <button className="navbutton" onClick={() => navigate("/NftProf")}>
-          NFT Profile
-        </button>
 
         <button className="navbutton" onClick={() => navigate("/Metadata")}>
           Create NFT

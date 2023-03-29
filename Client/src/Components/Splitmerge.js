@@ -72,9 +72,7 @@ function Splitmerge(props) {
     console.log("Transfering....");
 
     const accounts = await web3.eth.getAccounts();
-    await nftcontract.methods
-      .nftsplit(nftid, uri1, uri2)
-      .send({ from: accounts[0] });
+    await nftcontract.methods.nftsplit(nftid, uri1, uri2).send({ from: accounts[0] });
   };
   function handle() {
     console.log(inputamt1.current.value);
