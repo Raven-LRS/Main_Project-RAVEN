@@ -7,6 +7,7 @@ import { Button, Card } from "react-bootstrap";
 //import "bootstrap/dist/css/bootstrap.min.css";
 import { nftaddress2, abi1 } from "./abi";
 import web3 from "./web3";
+
 // import {useRef} from "react";
 // import NftProf from "./NftProf"
 // import { BrowserRouter, Routes, Route,NavLink } from "react-router-dom";
@@ -119,7 +120,7 @@ function Dashboard() {
       {/* Calling all values which we
 	have stored in usestate */}
 
-      <Card className="text-center">
+      <Card >
         <Card.Body>
           {/* <NftProf tok = {tokens} /> */}
 
@@ -136,7 +137,19 @@ function Dashboard() {
           {/* <Button onClick={approve} >
 		approve
 		</Button><br/><br/> */}
-          <div id="root1"></div>
+          <div id="root1">
+		  {/* <Card className="card">
+      <Card.Img variant="top" src="https://elevate.ca/wp-content/uploads/2022/04/galaxy-7040416_1280-1024x576.png"  style ={{width:"150px"}}/>
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <Button variant="primary">Go somewhere</Button>
+      </Card.Body>
+    </Card> */}
+		  </div>
         </Card.Body>
       </Card>
     </div>
