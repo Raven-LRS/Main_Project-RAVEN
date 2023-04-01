@@ -3,10 +3,12 @@ import React, { useEffect, useState } from "react";
 import { ethers } from "ethers";
 import "../App.css";
 import { Button, Card } from "react-bootstrap";
-// import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 //import "bootstrap/dist/css/bootstrap.min.css";
 import { nftaddress2, abi1 } from "./abi";
 import web3 from "./web3";
+import { NavLink } from "react-router-dom";
+import NftProf from "./NftProf.tsx";
 
 // import {useRef} from "react";
 // import NftProf from "./NftProf"
@@ -14,10 +16,13 @@ import web3 from "./web3";
 
 function Dashboard() {
   // usetstate for storing and retrieving wallet details
-  const [data, setdata] = useState({
-    address: "",
-    Balance: null,
-  });
+  const Data = "Hello from Parent Component!";
+  const [showChild, setShowChild] = useState(false);
+  const handleClick = () => {
+    setShowChild(true);
+    // setData('Hello from Parent Component!')
+  };
+  const navigate = useNavigate();
 
   // const[amount,setAmount]=useState("");
   // const[amount1,setAmount1]=useState("");
@@ -120,7 +125,7 @@ function Dashboard() {
       {/* Calling all values which we
 	have stored in usestate */}
 
-      <Card >
+      <Card>
         <Card.Body>
           {/* <NftProf tok = {tokens} /> */}
 
@@ -131,6 +136,8 @@ function Dashboard() {
           >
             Display the Land NFTs
           </Button>
+          <button onClick={handleClick}>View Metadata</button>
+          {showChild && <NftProf Data={Data} />}
 
           <br />
           <br />
@@ -138,7 +145,7 @@ function Dashboard() {
 		approve
 		</Button><br/><br/> */}
           <div id="root1">
-		  {/* <Card className="card">
+            {/* <Card className="card">
       <Card.Img variant="top" src="https://elevate.ca/wp-content/uploads/2022/04/galaxy-7040416_1280-1024x576.png"  style ={{width:"150px"}}/>
       <Card.Body>
         <Card.Title>Card Title</Card.Title>
@@ -149,7 +156,7 @@ function Dashboard() {
         <Button variant="primary">Go somewhere</Button>
       </Card.Body>
     </Card> */}
-		  </div>
+          </div>
         </Card.Body>
       </Card>
     </div>

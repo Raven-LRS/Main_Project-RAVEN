@@ -170,7 +170,7 @@ function Splitmerge(props) {
             Split
           </button>
           <br />
-          <hr style={{ marginLeft: "5px", width: "85%" }}></hr>
+          
           <h2>Merge</h2>
           <br />
           <label>NFT ID 1</label>

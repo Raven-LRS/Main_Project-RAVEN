@@ -3,6 +3,7 @@ import Popup from "./Popup";
 // import { contract, abi } from "./abi";
 // import web3 from "./web3";
 import React from "react";
+import { useLocation } from "react-router-dom";
 import "./Header";
 import "../App.css";
 
@@ -12,13 +13,15 @@ interface Data {
   email: string;
   country: string;
 }
-export default function NftProf() {
+export default function NftProf({ Data }) {
   // const nftcontract = new web3.eth.Contract(abi, contract);
   // const [sender, setsender] = useState();
   // let token1 = []
   // token1 = props.tok;
   const [data, setData] = useState<Data>();
   const [btnpp, setbtnpp] = useState(false);
+  const location = useLocation();
+  // const title = location.state.title;
   const fetchJson = () => {
     fetch("https://api.npoint.io/40d03538c02697f10317")
       .then((response) => {
@@ -26,6 +29,7 @@ export default function NftProf() {
       })
       .then((data) => {
         setData(data);
+        // console.log(location);
       })
       .catch((e: Error) => {
         console.log(e.message);
@@ -48,13 +52,16 @@ export default function NftProf() {
         marginBottom: "200px",
       }}
     >
+      <hr style={{ marginLeft: "5px", width: "85%" }}></hr>
       <div className="wrapper">
+        <Popup trigger={btnpp} setTrigger={setbtnpp}></Popup>
         <div className="subhead">
-          <h3>Land Details</h3>
+          <h3> Land Details</h3>
         </div>
         <div>
           <b>Name:</b>
-          {data?.name}
+          {Data}
+          {/* {title} */}
         </div>
         <br></br>
         <div>
@@ -106,6 +113,7 @@ export default function NftProf() {
           </div>
         </Popup>
       </div>
+      <hr style={{ marginLeft: "5px", width: "85%" }}></hr>
     </div>
   );
 }
