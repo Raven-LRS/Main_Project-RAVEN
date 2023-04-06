@@ -1,8 +1,32 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { nftaddress2, abi1 } from "./abi";
+import web3 from "./web3";
+import { useRef } from "react";
 
 function Metadata() {
   const [formData, setFormData] = useState({});
+
+  const inputadd = useRef(null);
+  const inputuri = useRef(null);
+
+  const nftcontract = new web3.eth.Contract(abi1, nftaddress2);
+
+
+  const Mint = async (minter, nfturi) => {
+    console.log("minting....");
+
+    const accounts = await web3.eth.getAccounts();
+    await nftcontract.methods.safeMint(minter, nfturi).send({ from: accounts[0] });
+  };
+  function handlemint() {
+    
+
+    let add = inputadd.current.value;
+    let uri_ = inputuri.current.value;
+    
+    Mint(add, uri_);
+  }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -72,7 +96,27 @@ function Metadata() {
         <input style={{marginLeft:'100px'}} type="text" name="loc" onChange={handleChange} />
       </label>
       <button className="button" type="submit">Submit</button>
+      
+
     </form>
+    <br/>
+    <br/>
+    <div className="subhead">
+          <h3>NFT Minter</h3>
+        </div>
+        <label>
+        Address:
+        <input style={{marginLeft:'125px'}}type="text" ref={inputadd} name="address"  />
+      </label>
+      <br/>
+      <label>
+        URI:
+        <input style={{marginLeft:'175px'}}type="text" ref={inputuri} name="uri"  />
+      </label><br/><br/>
+      <button className="button" onClick={handlemint}>
+            Mint
+          </button>
+      
     </div>
   );
 }
