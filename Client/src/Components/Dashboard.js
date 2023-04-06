@@ -141,7 +141,7 @@ function Dashboard() {
           {/* <NftProf tok = {tokens} /> */}
 
           <Button
-            style={{ marginLeft: "270px" }}
+            style={{ marginLeft: "220px" }}
             className="button"
             onClick={main}
           >
@@ -168,7 +168,7 @@ function Dashboard() {
       </Card.Body>
     </Card> */}
           </div>
-          <button  style={{ marginLeft: "270px" ,marginBottom:'140px' }} className="button"onClick={handleClick}>View Metadata</button>
+          <button  style={{ marginLeft: "240px" ,marginBottom:'140px' }} className="button"onClick={handleClick}>View Metadata</button>
           {showChild && <NftProf Data={Data} />}
         </Card.Body>
       </Card>

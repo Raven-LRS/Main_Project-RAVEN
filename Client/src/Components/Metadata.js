@@ -108,7 +108,7 @@ function Metadata() {
         Address:
         <input style={{marginLeft:'125px'}}type="text" ref={inputadd} name="address"  />
       </label>
-      <br/>
+      <br/><br></br>
       <label>
         URI:
         <input style={{marginLeft:'175px'}}type="text" ref={inputuri} name="uri"  />

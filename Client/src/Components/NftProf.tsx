@@ -46,16 +46,11 @@ export default function NftProf({ Data }) {
   // }
 
   return (
-    <div
-      style={{
-        marginTop: "3px",
-        marginBottom: "200px",
-      }}
-    >
-      <hr style={{ marginLeft: "5px", width: "85%" }}></hr>
+    <div>
+      <hr style={{ width: "85%",marginLeft:'-80px' }}></hr>
       <div className="wrapper">
-        <Popup trigger={btnpp} setTrigger={setbtnpp}></Popup>
-        <div className="subhead">
+        
+        <div  style={{marginLeft:'-170px'}} className="subhead">
           <h3> Land Details</h3>
         </div>
         <div>
@@ -113,7 +108,7 @@ export default function NftProf({ Data }) {
           </div>
         </Popup>
       </div>
-      <hr style={{ marginLeft: "5px", width: "85%" }}></hr>
+      <hr style={{ width: "85%",marginLeft:'-80px'}}></hr>
     </div>
   );
 }
