@@ -18,27 +18,27 @@ export default function NftProf({ Data }) {
   // const [sender, setsender] = useState();
   // let token1 = []
   // token1 = props.tok;
-  const [data, setData] = useState<Data>();
+  // const [data, setData] = useState<Data>();
   const [btnpp, setbtnpp] = useState(false);
-  const location = useLocation();
-  // const title = location.state.title;
-  const fetchJson = () => {
-    fetch("https://api.npoint.io/40d03538c02697f10317")
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setData(data);
-        // console.log(location);
-      })
-      .catch((e: Error) => {
-        console.log(e.message);
-      });
-    // console.log(token1[0])
-  };
-  useEffect(() => {
-    fetchJson();
-  }, []);
+  // const location = useLocation();
+  // // const title = location.state.title;
+  // const fetchJson = () => {
+  //   fetch("https://api.npoint.io/40d03538c02697f10317")
+  //     .then((response) => {
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       setData(data);
+  //       // console.log(location);
+  //     })
+  //     .catch((e: Error) => {
+  //       console.log(e.message);
+  //     });
+  //   // console.log(token1[0])
+  // };
+  // useEffect(() => {
+  //   fetchJson();
+  // }, []);
 
   // const sell = async(sender,reciever,id_no) => {
   //   const accounts = await web3.eth.getAccounts();
@@ -60,25 +60,25 @@ export default function NftProf({ Data }) {
         </div>
         <div>
           <b>Name:</b>
-          {Data}
+          {Data.ID}
           {/* {title} */}
         </div>
         <br></br>
         <div>
-          <b>ID number:</b> {data?.idno}
+          <b>ID number:</b> {Data?.idno}
         </div>
         <br></br>
         <div>
-          <b>Survey number:</b> {data?.surveyno}
+          <b>Survey number:</b> {Data?.surveyno}
         </div>
         <br></br>
         <div>
-          <b>Size:</b> {data?.size}
+          <b>Size:</b> {Data?.size}
         </div>
         <br></br>
         <div>
           <label>
-            <b>Location :</b> {data?.location}
+            <b>Location :</b> {Data?.location}
           </label>
         </div>
         <button onClick={() => setbtnpp(true)} className="button">

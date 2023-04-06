@@ -16,7 +16,17 @@ import NftProf from "./NftProf.tsx";
 
 function Dashboard() {
   // usetstate for storing and retrieving wallet details
-  const Data = "Hello from Parent Component!";
+  const Data = {
+    ID: "John",
+
+    idno: 123456789,
+
+    surveyno: "14",
+
+    size: " 5 acres",
+
+    location: "Mannargudi",
+  };
   const [showChild, setShowChild] = useState(false);
   const handleClick = () => {
     setShowChild(true);
@@ -107,10 +117,11 @@ function Dashboard() {
 
   function createElement(token) {
     return ` <div>
-  	<a href='/NftProf'>
+  	
   	<img src="${token.metadata.image}" width="100" height="100"/>
 	<h2>#${token.tokenId} ${token.metadata.name}</h2>
-	</a>
+	
+  
 	<hr />
   
 </div>`;
@@ -136,8 +147,7 @@ function Dashboard() {
           >
             Display the Land NFTs
           </Button>
-          <button onClick={handleClick}>View Metadata</button>
-          {showChild && <NftProf Data={Data} />}
+          
 
           <br />
           <br />
@@ -145,6 +155,7 @@ function Dashboard() {
 		approve
 		</Button><br/><br/> */}
           <div id="root1">
+         
             {/* <Card className="card">
       <Card.Img variant="top" src="https://elevate.ca/wp-content/uploads/2022/04/galaxy-7040416_1280-1024x576.png"  style ={{width:"150px"}}/>
       <Card.Body>
@@ -157,6 +168,8 @@ function Dashboard() {
       </Card.Body>
     </Card> */}
           </div>
+          <button  style={{ marginLeft: "270px" ,marginBottom:'140px' }} className="button"onClick={handleClick}>View Metadata</button>
+          {showChild && <NftProf Data={Data} />}
         </Card.Body>
       </Card>
     </div>
