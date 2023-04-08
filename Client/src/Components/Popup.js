@@ -5,7 +5,7 @@ function Popup(props) {
     <div className="Popup">
       <div className="Popup-inner">
         <button className="close-btn" onClick={() => props.setTrigger(false)}>
-          close
+          <b>X</b>
         </button>
         {props.children}
       </div>

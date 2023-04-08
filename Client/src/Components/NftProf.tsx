@@ -7,13 +7,16 @@ import { useLocation } from "react-router-dom";
 import "./Header";
 import "../App.css";
 
-interface Data {
-  name: string;
-  website: string;
-  email: string;
-  country: string;
-}
-export default function NftProf({ Data }) {
+// interface Data {
+//   name: string;
+//   website: string;
+//   email: string;
+//   country: string;
+// }
+export default function NftProf({Data}) {
+  
+  
+  console.log(Data);
   // const nftcontract = new web3.eth.Contract(abi, contract);
   // const [sender, setsender] = useState();
   // let token1 = []
@@ -47,14 +50,14 @@ export default function NftProf({ Data }) {
 
   return (
     <div>
-      <hr style={{ width: "85%",marginLeft:'-80px' }}></hr>
+      <hr style={{ width: "85%", marginLeft: "-80px" }}></hr>
       <div className="wrapper">
-        
-        <div  style={{marginLeft:'-170px'}} className="subhead">
+        <div style={{ marginLeft: "-170px" }} className="subhead">
           <h3> Land Details</h3>
         </div>
         <div>
           <b>Name:</b>
+          {/* {token[0].tokenId} */}
           {Data.ID}
           {/* {title} */}
         </div>
@@ -108,7 +111,7 @@ export default function NftProf({ Data }) {
           </div>
         </Popup>
       </div>
-      <hr style={{ width: "85%",marginLeft:'-80px'}}></hr>
+      <hr style={{ width: "85%", marginLeft: "-80px" }}></hr>
     </div>
   );
 }

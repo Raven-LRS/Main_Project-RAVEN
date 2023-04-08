@@ -9,6 +9,7 @@ import { nftaddress2, abi1 } from "./abi";
 import web3 from "./web3";
 import { NavLink } from "react-router-dom";
 import NftProf from "./NftProf.tsx";
+import { createElement } from "react";
 
 // import {useRef} from "react";
 // import NftProf from "./NftProf"
@@ -37,9 +38,9 @@ function Dashboard() {
   // const[amount,setAmount]=useState("");
   // const[amount1,setAmount1]=useState("");
 
-  let tokens = [];
+  var tokens = [];
 
-  const contract = new web3.eth.Contract(abi1, nftaddress2);
+  var contract = new web3.eth.Contract(abi1, nftaddress2);
 
   // Button handler button for handling a
   // request event for metamask
@@ -88,24 +89,26 @@ function Dashboard() {
   //------------------------------------------------------------------
 
   //displaying NFT
-  const main = async () => {
+  var main = async () => {
     var accounts = await web3.eth.getAccounts();
-    let account = accounts[0];
+    var account = accounts[0];
 
     const balance = Number(await contract.methods.balanceOf(account).call());
 
     for (var i = 0; i < balance; i++) {
-      const tokenId = await contract.methods
+      var tokenId = await contract.methods
         .tokenOfOwnerByIndex(account, i)
         .call();
-      const tokenURI = await contract.methods.tokenURI(tokenId).call();
+      var tokenURI = await contract.methods.tokenURI(tokenId).call();
       tokens.push({ tokenId, tokenURI });
+      console.log(tokens);
+      console.log(tokens[0].tokenURI);
     }
 
     for (var i = 0; i < tokens.length; i++) {
-      const token = tokens[i];
-      const metadataRes = await fetch(`${token.tokenURI}`);
-      const metadata = await metadataRes.json();
+      var token = tokens[i];
+      var metadataRes = await fetch(`${token.tokenURI}`);
+      var metadata = await metadataRes.json();
       token.metadata = metadata;
     }
 
@@ -113,19 +116,26 @@ function Dashboard() {
       .map(createElement)
       .join("");
     console.log("Values have been updated");
+    console.log(tokens[0].tokenURI);
   };
 
   function createElement(token) {
     return ` <div>
   	
   	<img src="${token.metadata.image}" width="100" height="100"/>
-	<h2>#${token.tokenId} ${token.metadata.name}</h2>
+	<h2 style="margin-left: 220px;margin-top:-60px">#${token.tokenId} ${token.metadata.name}</h2>
 	
   
-	<hr />
+	<hr style="width: 85%;margin-left: -80px"/>
   
 </div>`;
   }
+  // function createElement({ token }) {
+  //   return createElement(
+  //     'h1',
+  //     "nljnclj"
+  //   );
+  // }
 
   {
     /* <h1>#${token.tokenId} ${token.metadata.name}</h1></Link> */
@@ -147,7 +157,8 @@ function Dashboard() {
           >
             Display the Land NFTs
           </Button>
-          
+          {/* <button  style={{ marginLeft: "240px" ,marginBottom:'140px' }} className="button"onClick={handleClick}>View Metadata</button> */}
+          {/* {showChild && <NftProf token={} />} */}
 
           <br />
           <br />
@@ -155,7 +166,6 @@ function Dashboard() {
 		approve
 		</Button><br/><br/> */}
           <div id="root1">
-         
             {/* <Card className="card">
       <Card.Img variant="top" src="https://elevate.ca/wp-content/uploads/2022/04/galaxy-7040416_1280-1024x576.png"  style ={{width:"150px"}}/>
       <Card.Body>
@@ -168,7 +178,13 @@ function Dashboard() {
       </Card.Body>
     </Card> */}
           </div>
-          <button  style={{ marginLeft: "240px" ,marginBottom:'140px' }} className="button"onClick={handleClick}>View Metadata</button>
+          <button
+            style={{ marginLeft: "240px", marginBottom: "140px" }}
+            className="button"
+            onClick={handleClick}
+          >
+            View Metadata
+          </button>
           {showChild && <NftProf Data={Data} />}
         </Card.Body>
       </Card>
