@@ -179,7 +179,7 @@ function Dashboard() {
     </Card> */}
           </div>
           <button
-            style={{ marginLeft: "240px", marginBottom: "140px" }}
+            style={{ marginLeft: "240px" }}
             className="button"
             onClick={handleClick}
           >
