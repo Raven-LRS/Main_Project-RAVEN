@@ -100,17 +100,19 @@ function Dashboard() {
         .tokenOfOwnerByIndex(account, i)
         .call();
       var tokenURI = await contract.methods.tokenURI(tokenId).call();
-      tokens.push({ tokenId, tokenURI });
+      var metadataRes = await fetch(`${tokenURI}`);
+      var metadata = await metadataRes.json();
+      tokens.push({ tokenId, tokenURI, metadata });
       console.log(tokens);
-      console.log(tokens[0].tokenURI);
+      // console.log(tokens[0]);
     }
 
-    for (var i = 0; i < tokens.length; i++) {
-      var token = tokens[i];
-      var metadataRes = await fetch(`${token.tokenURI}`);
-      var metadata = await metadataRes.json();
-      token.metadata = metadata;
-    }
+    // for (var i = 0; i < tokens.length; i++) {
+    //   var token = tokens[i];
+    //   var metadataRes = await fetch(`${token.tokenURI}`);
+    //   var metadata = await metadataRes.json();
+    //   token.metadata = metadata;
+    // }
 
     document.getElementById("root1").innerHTML = tokens
       .map(createElement)
