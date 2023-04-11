@@ -1,4 +1,4 @@
-export const nftaddress2 ='0xb1A743016C985Ec2CC1BcD07c093a833c7559E99';
+export const nftaddress2 ='0xb1A743016C985Ec2CC1BcD07c093a833c7559E99';//'0xb1A743016C985Ec2CC1BcD07c093a833c7559E99';
 
 export const abi1 = [
 	{
@@ -70,19 +70,6 @@ export const abi1 = [
 			}
 		],
 		"name": "approve",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "burn",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -371,44 +358,12 @@ export const abi1 = [
 	},
 	{
 		"inputs": [],
-		"name": "membId",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
 		"name": "name",
 		"outputs": [
 			{
 				"internalType": "string",
 				"name": "",
 				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "offici",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
 			}
 		],
 		"stateMutability": "view",
