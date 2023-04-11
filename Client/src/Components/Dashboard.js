@@ -124,7 +124,7 @@ function Dashboard() {
   	
   	<img src="${token.metadata.image}" width="100" height="100"/>
 	<h2 style="margin-left: 220px;margin-top:-60px">#${token.tokenId} ${token.metadata.name}</h2>
-	<Button  style="margin-left: 500px;background-color: #ffd600;margin-top:-60px">View</Button>
+	<Button class = "but" >View</Button>
   
 	<hr style="width: 85%;margin-left: -80px"/>
   
@@ -136,7 +136,7 @@ function Dashboard() {
   //     "nljnclj"
   //   );
   // }
-
+  // style="margin-left: 500px;background-color: #ffd600;margin-top:-60px"
   {
     /* <h1>#${token.tokenId} ${token.metadata.name}</h1></Link> */
   }
