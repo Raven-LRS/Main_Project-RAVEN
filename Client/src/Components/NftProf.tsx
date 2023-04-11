@@ -13,9 +13,7 @@ import "../App.css";
 //   email: string;
 //   country: string;
 // }
-export default function NftProf({Data}) {
-  
-  
+export default function NftProf({ Data }) {
   console.log(Data);
   // const nftcontract = new web3.eth.Contract(abi, contract);
   // const [sender, setsender] = useState();
@@ -50,20 +48,21 @@ export default function NftProf({Data}) {
 
   return (
     <div>
-      <hr style={{ width: "85%", marginLeft: "-80px" }}></hr>
+      {/* <hr style={{ width: "85%", marginLeft: "-80px" }}></hr> */}
+
       <div className="wrapper">
         <div style={{ marginLeft: "-170px" }} className="subhead">
           <h3> Land Details</h3>
         </div>
         <div>
-          <b>Name:</b>
+          <b>Name : </b>
           {/* {token[0].tokenId} */}
           {Data.ID}
           {/* {title} */}
         </div>
         <br></br>
         <div>
-          <b>ID number:</b> {Data?.idno}
+          <b>ID number :</b> {Data?.idno}
         </div>
         <br></br>
         <div>
@@ -71,7 +70,7 @@ export default function NftProf({Data}) {
         </div>
         <br></br>
         <div>
-          <b>Size:</b> {Data?.size}
+          <b>Size :</b> {Data?.size}
         </div>
         <br></br>
         <div>
@@ -111,7 +110,7 @@ export default function NftProf({Data}) {
           </div>
         </Popup>
       </div>
-      <hr style={{ width: "85%", marginLeft: "-80px" }}></hr>
+      {/* <hr style={{ width: "85%", marginLeft: "-80px" }}></hr> */}
     </div>
   );
 }
