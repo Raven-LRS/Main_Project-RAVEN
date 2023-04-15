@@ -21,6 +21,12 @@ export default function NftProf({ Data }) {
   // token1 = props.tok;
   // const [data, setData] = useState<Data>();
   const [btnpp, setbtnpp] = useState(false);
+  const [inputValue, setInputValue] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(inputValue); // or display the value in the UI
+  };
+
   // const location = useLocation();
   // // const title = location.state.title;
   // const fetchJson = () => {
@@ -51,31 +57,48 @@ export default function NftProf({ Data }) {
       {/* <hr style={{ width: "85%", marginLeft: "-80px" }}></hr> */}
 
       <div className="wrapper">
-        <div style={{ marginLeft: "-170px" }} className="subhead">
+        <form onSubmit={handleSubmit}>
+        <label>
+               Enter your NFT ID:
+          <input
+            type="text"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+          />
+           </label>
+          <button className="button" type="submit">Submit</button>
+        </form>
+        <br />
+        <br />
+        <div className="subhead">
           <h3> Land Details</h3>
         </div>
         <div>
           <b>Name : </b>
           {/* {token[0].tokenId} */}
-          {Data.ID}
+          {/* {Data.ID} */}
           {/* {title} */}
         </div>
         <br></br>
         <div>
-          <b>ID number :</b> {Data?.idno}
+          <b>ID number :</b>
+          {/* {Data?.idno} */}
         </div>
         <br></br>
         <div>
-          <b>Survey number:</b> {Data?.surveyno}
+          <b>Survey number:</b>
+          {/* {Data?.surveyno} */}
         </div>
         <br></br>
         <div>
-          <b>Size :</b> {Data?.size}
+          <b>Size :</b>
+          {/* {Data?.size} */}
         </div>
         <br></br>
         <div>
           <label>
-            <b>Location :</b> {Data?.location}
+            <b>Location :</b>
+            {/* {Data?.location} */}
           </label>
         </div>
         <button onClick={() => setbtnpp(true)} className="button">

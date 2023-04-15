@@ -4,16 +4,20 @@ import { useNavigate } from "react-router-dom";
 
 function App() {
   const navigate = useNavigate();
+ 
   return (
     <>
       <Header></Header>
-      
-      <div style={{ flexDirection: "row", marginLeft: "100px" }}>
+
+      <div style={{ flexDirection: "row" }}>
         <button className="navbutton" onClick={() => navigate("/Home")}>
           Home
         </button>
         <button className="navbutton" onClick={() => navigate("/Dashboard")}>
           Dashboard
+        </button>
+        <button className="navbutton" onClick={() => navigate("/NftProf")}>
+          NFT Profile
         </button>
 
         <button className="navbutton" onClick={() => navigate("/Metadata")}>

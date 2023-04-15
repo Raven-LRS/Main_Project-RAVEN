@@ -12,19 +12,18 @@ function Metadata() {
 
   const nftcontract = new web3.eth.Contract(abi1, nftaddress2);
 
-
   const Mint = async (minter, nfturi) => {
     console.log("minting....");
 
     const accounts = await web3.eth.getAccounts();
-    await nftcontract.methods.safeMint(minter, nfturi).send({ from: accounts[0] });
+    await nftcontract.methods
+      .safeMint(minter, nfturi)
+      .send({ from: accounts[0] });
   };
   function handlemint() {
-    
-
     let add = inputadd.current.value;
     let uri_ = inputuri.current.value;
-    
+
     Mint(add, uri_);
   }
 
@@ -56,67 +55,108 @@ function Metadata() {
 
   return (
     <div className="wrapper">
-    <form onSubmit={handleSubmit}>
-    <div className="subhead">
+      <form onSubmit={handleSubmit}>
+        <div className="subhead">
           <h3>NFT Metadata</h3>
         </div>
-      <label>
-        Name:
-        <input style={{marginLeft:'125px'}}type="text" name="name" onChange={handleChange} />
-      </label><br>
-      </br>
-      <br>
-      </br>
-      <label>
-        ID Number:
-        <input style={{marginLeft:'70px'}}type="text" name="id" onChange={handleChange} />
-      </label>
-      <br>
-      </br>
-      <br>
-      </br>
-      <label>
-        Survey Number:
-        <input style={{marginLeft:'20px'}} type="text" name="survey" onChange={handleChange} />
-      </label>
-      <br>
-      </br>
-      <br>
-      </br>
-      <label>
-        Size:
-        <input style={{marginLeft:'150px'}}type="text" name="size" onChange={handleChange} />
-      </label>
-      <br>
-      </br>
-      <br>
-      </br>
-      <label>
-        Location:
-        <input style={{marginLeft:'100px'}} type="text" name="loc" onChange={handleChange} />
-      </label>
-      <button className="button" type="submit">Submit</button>
-      
-
-    </form>
-    <br/>
-    <br/>
-    <div className="subhead">
-          <h3>NFT Minter</h3>
-        </div>
         <label>
+          Name:
+          <input
+            style={{ marginLeft: "125px" }}
+            type="text"
+            name="name"
+            onChange={handleChange}
+          />
+        </label>
+        <br></br>
+        <br></br>
+        <label>
+          ID Number:
+          <input
+            style={{ marginLeft: "70px" }}
+            type="text"
+            name="id"
+            onChange={handleChange}
+          />
+        </label>
+        <br></br>
+        <br></br>
+        <label>
+          Survey Number:
+          <input
+            style={{ marginLeft: "20px" }}
+            type="text"
+            name="survey"
+            onChange={handleChange}
+          />
+        </label>
+        <br></br>
+        <br></br>
+        <label>
+          Size:
+          <input
+            style={{ marginLeft: "150px" }}
+            type="text"
+            name="size"
+            onChange={handleChange}
+          />
+        </label>
+        <br></br>
+        <br></br>
+        <label>
+          Location:
+          <input
+            style={{ marginLeft: "100px" }}
+            type="text"
+            name="loc"
+            onChange={handleChange}
+          />
+        </label>
+        <br></br>
+        <br></br>
+        <label>
+          Image URI:
+          <input
+            style={{ marginLeft: "80px" }}
+            type="text"
+            name="image"
+            onChange={handleChange}
+          />
+        </label>
+        <button className="button" type="submit">
+          Submit
+        </button>
+      </form>
+      <br />
+      <br />
+      <div className="subhead">
+        <h3>NFT Minter</h3>
+      </div>
+      <label>
         Address:
-        <input style={{marginLeft:'125px'}}type="text" ref={inputadd} name="address"  />
+        <input
+          style={{ marginLeft: "125px" }}
+          type="text"
+          ref={inputadd}
+          name="address"
+        />
       </label>
-      <br/><br></br>
+      <br />
+      <br></br>
       <label>
         URI:
-        <input style={{marginLeft:'175px'}}type="text" ref={inputuri} name="uri"  />
-      </label><br/><br/>
+        <input
+          style={{ marginLeft: "175px" }}
+          type="text"
+          ref={inputuri}
+          name="uri"
+        />
+      </label>
+      <br />
+      <br />
       <button className="button" onClick={handlemint}>
-            Mint
-          </button>
-      
+        Mint
+      </button>
     </div>
   );
 }
