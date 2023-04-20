@@ -47,7 +47,7 @@ export default function NftProf({ Data }) {
   //   fetchJson();
   // }, []);
 
-  // const sell = async(sender,reciever,id_no) => {
+  // const uri = async(sender,reciever,id_no) => {
   //   const accounts = await web3.eth.getAccounts();
   //   await nftcontract.methods.safeTransferFrom(sender, reciever , id_no, "").send({from:accounts[0]});
   // }

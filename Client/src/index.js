@@ -5,6 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route,Navlink } from "react-router-dom";
 import App from './Components/App';
 import NftProf from './Components/NftProf.tsx';
+import NFTprofile from './Components/NFTprofile';
 import Metadata from './Components/Metadata';
 import Home from "./Components/Home";
 import Dashboard from "./Components/Dashboard";
@@ -22,6 +23,7 @@ root.render(
           <Route  path="/"  element={<App />}>
           <Route  path="Home"  element={<Home/>}/>
           <Route path="NftProf" element={<NftProf />} />
+          <Route path="Nft" element={<NFTprofile />} />
           <Route path="Metadata" element={<Metadata/>} />
           <Route path="Dashboard" element={<Dashboard/>} />
           <Route path="Splitmerge" element={<Splitmerge/>} />
