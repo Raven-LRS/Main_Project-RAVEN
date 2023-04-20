@@ -16,7 +16,7 @@ function App() {
         <button className="navbutton" onClick={() => navigate("/Dashboard")}>
           Dashboard
         </button>
-        <button className="navbutton" onClick={() => navigate("/NftProf")}>
+        <button className="navbutton" onClick={() => navigate("/Nft")}>
           NFT Profile
         </button>
 

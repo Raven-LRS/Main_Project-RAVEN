@@ -1,97 +1,32 @@
 // Importing modules
 import React, { useEffect, useState } from "react";
-import { ethers } from "ethers";
 import "../App.css";
 import { Button, Card } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
-//import "bootstrap/dist/css/bootstrap.min.css";
 import { nftaddress2, abi1 } from "./abi";
 import web3 from "./web3";
-import { NavLink } from "react-router-dom";
-import NftProf from "./NftProf.tsx";
-import { createElement } from "react";
-
 import {useRef} from "react";
-// import NftProf from "./NftProf"
-// import { BrowserRouter, Routes, Route,NavLink } from "react-router-dom";
+import Popup from "./Popup";
 
 function NFTprofile() {
   // usetstate for storing and retrieving wallet details
-  const Data = {
-    ID: "John",
-
-    idno: 123456789,
-
-    surveyno: "14",
-
-    size: " 5 acres",
-
-    location: "Mannargudi",
-  };
+  
 
   const prof1 = useRef(null);
-  const prof2 = useRef(null);
-  const [showChild, setShowChild] = useState(false);
-  const handleClick = () => {
-    setShowChild(true);
-    // setData('Hello from Parent Component!')
-  };
-  const navigate = useNavigate();
+  const seller_ = useRef(null);
+  const buyer_ = useRef(null);
+  const tid_ = useRef(null);
+  
+  const [nftd, setNftd] = useState({});
+  const [btnpp, setbtnpp] = useState(false);
 
-  // const[amount,setAmount]=useState("");
-  // const[amount1,setAmount1]=useState("");
+  
 
   var tokens = [];
-
+ 
   var contract = new web3.eth.Contract(abi1, nftaddress2);
 
-  // Button handler button for handling a
-  // request event for metamask
-  // const btnhandler = () => {
+  
 
-  // 	// Asking if metamask is already present or not
-  // 	if (window.ethereum) {
-
-  // 	// res[0] for fetching a first wallet
-  // 	window.ethereum
-  // 		.request({ method: "eth_requestAccounts" })
-  // 		.then((res) => accountChangeHandler(res[0]));
-  // 	} else {
-  // 	alert("install metamask extension!!");
-  // 	}
-  // };
-
-  // const getbalance = (address) => {
-
-  // 	// Requesting balance method
-  // 	window.ethereum
-  // 	.request({
-  // 		method: "eth_getBalance",
-  // 		params: [address, "latest"]
-  // 	})
-  // 	.then((balance) => {
-  // 		// Setting balance
-  // 		setdata({
-  // 		Balance: ethers.utils.formatEther(balance),
-  // 		});
-  // 	});
-  // };
-
-  // // Function for getting handling all events
-  // const accountChangeHandler = (account) => {
-  // 	// Setting an address data
-  // 	setdata({
-  // 	address: account,
-  // 	});
-
-  // 	// Setting a balance
-  // 	getbalance(account);
-  // };
-
-  //------------------------------------------------------------------
-  //------------------------------------------------------------------
-
-  //displaying NFT
   var main_profile = async (val1) => {
     var accounts = await web3.eth.getAccounts();
     var account = accounts[0];
@@ -107,55 +42,33 @@ function NFTprofile() {
       var metadata = await metadataRes.json();
       tokens.push({ tokenId, tokenURI, metadata });
       console.log(tokens);
-      // console.log(tokens[0]);
+      
       
     }
 
-    // for (var i = 0; i < tokens.length; i++) {
-    //   var token = tokens[i];
-    //   var metadataRes = await fetch(`${token.tokenURI}`);
-    //   var metadata = await metadataRes.json();
-    //   token.metadata = metadata;
-    // }
+   
+    setNftd(tokens[val1].metadata);
 
     
-    var nft_data = tokens[val1].metadata;
-    console.log("identier");
-    console.log(nft_data);
-
-    document.getElementById("root1").innerHTML = tokens
-      .map(createElement)
-      .join("");
-    console.log("Values have been updated");
-    console.log(tokens[0].tokenURI);
   };
 
   const handle_prof = () => {
     let x = prof1.current.value;
     main_profile(x)
 }
+ 
+  const sell = async(seller,buyer, tid) => {
+    const accounts = await web3.eth.getAccounts();
+    await contract.methods.safeTransferFrom(seller,buyer, tid).send({ from: accounts[0] });
+  }
 
-  function createElement(token) {
-    return ` <div>
-  	
-  	<img src="${token.metadata.image}" width="100" height="100"/>
-	<h2 style="margin-left: 220px;margin-top:-60px">#${token.tokenId} ${token.metadata.name}</h2>
-	<Button class = "but" >View</Button>
-  
-	<hr style="width: 85%;margin-left: -80px"/>
-  
-</div>`;
-  }
-  // function createElement({ token }) {
-  //   return createElement(
-  //     'h1',
-  //     "nljnclj"
-  //   );
-  // }
-  // style="margin-left: 500px;background-color: #ffd600;margin-top:-60px"
-  {
-    /* <h1>#${token.tokenId} ${token.metadata.name}</h1></Link> */
-  }
+  const handle_sell = () => {
+    let a = seller_.current.value;
+    let b = buyer_.current.value;
+    let c = tid_.current.value;
+    sell(a,b,c)
+}
+
 
   return (
     <div className="home">
@@ -164,7 +77,7 @@ function NFTprofile() {
 
       <Card>
         <Card.Body>
-          {/* <NftProf tok = {tokens} /> */}
+          
           <label>NFT Id:</label>
           <input
             style={{ marginLeft: "60px" }}
@@ -180,40 +93,50 @@ function NFTprofile() {
             className="button"
             onClick={handle_prof}
           >
-            Submit
+            View Data
           </Button>
-          {/* <button  style={{ marginLeft: "240px" ,marginBottom:'140px' }} className="button"onClick={handleClick}>View Metadata</button> */}
-          {/* {showChild && <NftProf token={} />} */}
-
+         
           <br />
           <br />
 
           <label>name:</label>
-          {/* {nft_data} */}
-          {/* <Button onClick={approve} >
-		approve
-		</Button><br/><br/> */}
-          <div id="root1">
-            {/* <Card className="card">
-      <Card.Img variant="top" src="https://elevate.ca/wp-content/uploads/2022/04/galaxy-7040416_1280-1024x576.png"  style ={{width:"150px"}}/>
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-    </Card> */}
+          {nftd.name}
+          <br />
+          <br />
+          <label>image:</label>
+          {nftd.image}
+          <button onClick={() => setbtnpp(true)} className="button">
+          SELL
+        </button>
+        <br></br>
+        <br></br>
+        <Popup trigger={btnpp} setTrigger={setbtnpp}>
+          <div style={{ color: "black" }}>
+            <form>
+              <label>
+                From:
+                <input
+                  ref = {seller_}
+                  style={{ marginLeft: "68px" }}
+                  className="input"
+                  type="text"
+                  name="sender"
+                />
+              </label>
+              <br></br>
+              <label>
+                To:
+                <input ref = {buyer_} className="input" type="text" name="reciever" />
+              </label>
+              <br></br>
+              <label>
+                ID:
+                <input ref = {tid_} className="input" type="text" name="idno" />
+              </label>
+            </form>
+            <button className="button" onClick={handle_sell}>PROCEED</button>
           </div>
-          <button
-            style={{ marginLeft: "240px" }}
-            className="button"
-            onClick={handleClick}
-          >
-            View Metadata
-          </button>
-          {showChild && <NftProf Data={Data} />}
+        </Popup>
         </Card.Body>
       </Card>
     </div>
