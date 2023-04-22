@@ -76,16 +76,7 @@ h2 {
   cursor: pointer;
   text-align: center;
 }
-.but{
-  margin-left: 500px;
-  background-color: #ffd600;
-  margin-top:-60px;
-  color: black;
-  font-size: 20px;
-  font-family: "Poppins", sans-serif;
-  font-weight: bold;
-   padding: 10px 50px;
-}
+
 .navbutton {
   background-color: #161b22;
   font-size: 20px;
