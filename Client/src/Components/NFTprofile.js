@@ -89,15 +89,15 @@ function NFTprofile() {
             View Data
           </Button>
 
-          <Popup trigger={btnpp1} setTrigger={setbtnpp1}>
-            <div style={{ color: "black" }}>
+          <Popup style={{ backgroundColor:"#61dafb" }}trigger={btnpp1} setTrigger={setbtnpp1}>
+            <div style={{ color: "black"}}>
               <label>Name:</label>
               {nftd.name}
               <br />
               <br />
               <label>Image URI:</label>
               {nftd.image}
-            </div>
+           
             <button
               onClick={() => setbtnpp2(true)}
               style={{ marginTop: "30px" }}
@@ -105,6 +105,7 @@ function NFTprofile() {
             >
               SELL
             </button>
+            </div>
           </Popup>
           <Popup trigger={btnpp2} setTrigger={setbtnpp2}>
             <div style={{ color: "black" }}>
@@ -113,7 +114,7 @@ function NFTprofile() {
                   From:
                   <input
                     ref={seller_}
-                    style={{ marginLeft: "68px" }}
+                    style={{ marginLeft: "72px" }}
                     className="input"
                     type="text"
                     name="sender"
