@@ -49,7 +49,7 @@ function NFTprofile() {
     main_profile(x);
     setbtnpp1(true);
   };
-
+  
   const sell = async (seller, buyer, tid) => {
     const accounts = await web3.eth.getAccounts();
     await contract.methods
