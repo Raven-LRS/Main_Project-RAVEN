@@ -122,7 +122,8 @@ function Metadata() {
             name="image"
             onChange={handleChange}
           />
-        </label>
+        </label> <br />
+      <br></br>
         <button className="button" type="submit">
           Submit
         </button>
