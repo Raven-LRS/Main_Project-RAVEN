@@ -1,4 +1,5 @@
-export const nftaddress2 ='0xb1A743016C985Ec2CC1BcD07c093a833c7559E99';//'0xb1A743016C985Ec2CC1BcD07c093a833c7559E99';
+export const nftaddress2 ='0x23377EfB991986a2BE720eeD05c24FC0D69E05df';
+//'0xb1A743016C985Ec2CC1BcD07c093a833c7559E99';'0xb1A743016C985Ec2CC1BcD07c093a833c7559E99';
 
 export const abi1 = [
 	{
@@ -100,6 +101,24 @@ export const abi1 = [
 	{
 		"inputs": [
 			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "nftSell",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "uint256",
 				"name": "nft3",
 				"type": "uint256"
@@ -140,8 +159,34 @@ export const abi1 = [
 		"type": "event"
 	},
 	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			}
+		],
+		"name": "Reg_approval",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"name": "renounceOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			}
+		],
+		"name": "revoke_reg_approval",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -327,6 +372,25 @@ export const abi1 = [
 				"internalType": "address",
 				"name": "",
 				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "is_approved",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
 			}
 		],
 		"stateMutability": "view",

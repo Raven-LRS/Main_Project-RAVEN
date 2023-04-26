@@ -52,9 +52,8 @@ function NFTprofile() {
   
   const sell = async (seller, buyer, tid) => {
     const accounts = await web3.eth.getAccounts();
-    await contract.methods
-      .safeTransferFrom(seller, buyer, tid)
-      .send({ from: accounts[0] });
+    await contract.methods.safeTransferFrom(seller, buyer, tid).send({ from: accounts[0] });
+    
   };
 
   const handle_sell = () => {
