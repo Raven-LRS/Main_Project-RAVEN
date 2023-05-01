@@ -35,6 +35,7 @@ export default function Header() {
           Balance: ethers.utils.formatEther(balance),
         });
       });
+      
   };
 
   // Function for getting handling all events
@@ -43,10 +44,12 @@ export default function Header() {
     setdata({
       address: account,
     });
+    console.log(account);
 
     // Setting a balance
     getbalance(account);
   };
+
 
   //-------
   return (

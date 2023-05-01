@@ -15,12 +15,14 @@ function NFTprofile() {
   const buyer_ = useRef(null);
   const tid_ = useRef(null);
   const addr = useRef(null);
+  const addr1 = useRef(null);
   const [nftd, setNftd] = useState({});
   const [btnpp1, setbtnpp1] = useState(false);
 
   const [btnpp2, setbtnpp2] = useState(false);
 
   var tokens = [];
+  var tkdisp;
 
   var contract = new web3.eth.Contract(abi1, nftaddress2);
 
@@ -31,17 +33,18 @@ function NFTprofile() {
     const balance = Number(await contract.methods.balanceOf(account).call());
 
     for (var i = 0; i < balance; i++) {
-      var tokenId = await contract.methods
-        .tokenOfOwnerByIndex(account, i)
-        .call();
+      var tokenId = await contract.methods.tokenOfOwnerByIndex(account, i).call();
       var tokenURI = await contract.methods.tokenURI(tokenId).call();
       var metadataRes = await fetch(`${tokenURI}`);
       var metadata = await metadataRes.json();
       tokens.push({ tokenId, tokenURI, metadata });
+      if(tokenId == val1){
+      tkdisp = i;
+      }
       console.log(tokens);
     }
 
-    setNftd(tokens[val1].metadata);
+    setNftd(tokens[tkdisp].metadata);
   };
 
   const handle_prof = () => {
@@ -50,18 +53,36 @@ function NFTprofile() {
     setbtnpp1(true);
   };
 
-  const sell = async (seller, buyer, tid) => {
+  const sell = async (buyer, tid) => {
     const accounts = await web3.eth.getAccounts();
-    await contract.methods
-      .safeTransferFrom(seller, buyer, tid)
-      .send({ from: accounts[0] });
+    await contract.methods.nftSell(buyer, tid).send({ from: accounts[0] });
   };
 
   const handle_sell = () => {
-    let a = seller_.current.value;
+    //let a = seller_.current.value;
     let b = buyer_.current.value;
     let c = tid_.current.value;
-    sell(a, b, c);
+    sell(b, c);
+  };
+
+  const approve = async (user_to_enable) => {
+    const accounts = await web3.eth.getAccounts();
+    await contract.methods.Reg_approval(user_to_enable).send({ from: accounts[0] });
+  };
+
+  const handle_approve = () => {
+    let d = addr.current.value;
+    approve(d);
+  };
+
+  const revoke = async (user_to_revoke) => {
+    const accounts = await web3.eth.getAccounts();
+    await contract.methods.revoke_reg_approval(user_to_revoke).send({ from: accounts[0] });
+  };
+
+  const handle_revoke = () => {
+    let e = addr1.current.value;
+    revoke(e);
   };
 
   return (
@@ -96,7 +117,7 @@ function NFTprofile() {
           >
             <div style={{ color: "black" }}>
               <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkdDy1MPyAklifM98twCxSuRj7EVJPO0cmHg&usqp=CAU"
+                src={nftd.image}
                 class="center"
               />
               <br></br>
@@ -129,7 +150,7 @@ function NFTprofile() {
           <Popup trigger={btnpp2} setTrigger={setbtnpp2}>
             <div style={{ color: "black" }}>
               <form>
-                <label>
+                {/* <label>
                   From:
                   <input
                     ref={seller_}
@@ -139,7 +160,7 @@ function NFTprofile() {
                     name="sender"
                   />
                 </label>
-                <br></br>
+                <br></br> */}
                 <label>
                   To:
                   <input
@@ -173,7 +194,7 @@ function NFTprofile() {
             name="id_1"
           />
           <button
-            // onClick={() => setbtnpp2(true)}
+            onClick={handle_approve}
             style={{ marginTop: "30px" }}
             className="button"
           >
@@ -183,13 +204,13 @@ function NFTprofile() {
           <label>User Address :</label>
           <input
             style={{ marginLeft: "60px" }}
-            ref={addr}
+            ref={addr1}
             type="text"
             id="id_1"
             name="id_1"
           />
           <button
-            // onClick={() => setbtnpp2(true)}
+            onClick={handle_revoke}
             style={{ marginTop: "30px" }}
             className="button"
           >

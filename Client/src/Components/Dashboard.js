@@ -27,9 +27,7 @@ function Dashboard() {
     const balance = Number(await contract.methods.balanceOf(account).call());
 
     for (var i = 0; i < balance; i++) {
-      var tokenId = await contract.methods
-        .tokenOfOwnerByIndex(account, i)
-        .call();
+      var tokenId = await contract.methods.tokenOfOwnerByIndex(account, i).call();
       var tokenURI = await contract.methods.tokenURI(tokenId).call();
       var metadataRes = await fetch(`${tokenURI}`);
       var metadata = await metadataRes.json();
@@ -44,7 +42,7 @@ function Dashboard() {
       .map(createElement)
       .join("");
     console.log("Values have been updated");
-    console.log(tokens[0].tokenURI);
+    console.log(tokens);
   };
 
   function createElement(token) {
