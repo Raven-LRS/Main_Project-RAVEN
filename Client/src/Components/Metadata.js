@@ -58,6 +58,8 @@ function Metadata() {
       <form onSubmit={handleSubmit}>
         <div className="subhead">
           <h3>NFT Metadata</h3>
+          <p className="function_detail">Metadata can be feed to this form to create a metadata file which can be stored in cloud to nft uri. for more refer this</p>
+          <br/>
         </div>
         <label>
           Name:
@@ -132,7 +134,9 @@ function Metadata() {
       <br />
       <div className="subhead">
         <h3>NFT Minter</h3>
+        <p className="function_detail">Generated uri and address of the nft owner is given to create new Nft. for more refer this</p>
       </div>
+      
       <label>
         Address:
         <input

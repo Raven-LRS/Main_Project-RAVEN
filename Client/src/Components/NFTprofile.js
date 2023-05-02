@@ -197,6 +197,8 @@ function NFTprofile() {
           <hr style={{ width: "80%", marginLeft: "-30px" }}></hr>
           <br></br>
           <h2 style={{ marginLeft: "300px" }}>Registrar Consent</h2>
+          <p className="function_detail">Registrar has to give his approval to initiate modification in Nft. for more refer this</p>
+          <br/>
           <label>User Address :</label>
           <input
             style={{ marginLeft: "60px" }}

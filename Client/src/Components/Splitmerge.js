@@ -115,6 +115,8 @@ function Splitmerge(props) {
         <Card.Body>
          
           <h2>Split</h2>
+          <p className="function_detail">This function splits a NFT in case Owner wills it. NftID refers to tokrnID in smart contract.<br/>
+          Uri1,Uri2 refers to metadata of new tokens. for more refer this</p>
           <br />
           <label>NFT ID</label>
           <input
@@ -154,6 +156,8 @@ function Splitmerge(props) {
           <br />
 
           <h2>Merge</h2>
+          <p className="function_detail">This function merges two NFTs in case Owner wills it. NftID1, NftID2 refers to tokenID in smart contract.<br/>
+          Uri3 refers to metadata of new token. for more refer this</p>
           <br />
           <label>NFT ID 1</label>
           <input
