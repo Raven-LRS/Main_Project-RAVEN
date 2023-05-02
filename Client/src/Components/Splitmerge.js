@@ -113,27 +113,7 @@ function Splitmerge(props) {
 
       <Card style={{ marginTop: "-80px" }}>
         <Card.Body>
-          {/* <Card.Header>
-          <b>Address: </b>
-          {data.address}
-        </Card.Header>
-  
-          <Card.Text>
-            <b>Balance: </b>
-            {data.Balance}
-          </Card.Text>
-          <button
-            className="button"
-            style={{ marginLeft: "0px" }}
-            // onClick={btnhandler}
-          >
-            Connect to wallet
-          </button>
-          <br />
-          <br /> */}
-          {/* <Button onClick={approve} >
-		approve
-		</Button><br/><br/> */}
+         
           <h2>Split</h2>
           <br />
           <label>NFT ID</label>
@@ -145,7 +125,7 @@ function Splitmerge(props) {
             name="amt"
           />
 
-          <br></br>
+<br></br><br></br>
           <label>URI 1</label>
           <input
             style={{ marginLeft: "60px" }}
@@ -154,7 +134,7 @@ function Splitmerge(props) {
             id="amt1"
             name="amt1"
           />
-          <br></br>
+          <br></br><br></br>
           {/* https://api.npoint.io/85d1c9f86870b292c0a6 */}
           <label>URI 2</label>
           <input
@@ -184,7 +164,7 @@ function Splitmerge(props) {
             name="amt3"
           />
 
-          <br></br>
+          <br></br><br></br>
           <label>NFT ID 2</label>
           <input
             style={{ marginLeft: "25px" }}
@@ -194,7 +174,7 @@ function Splitmerge(props) {
             name="amt4"
           />
 
-          <br></br>
+          <br></br><br></br>
           <label>URI 3</label>
           <input
             style={{ marginLeft: "54px" }}

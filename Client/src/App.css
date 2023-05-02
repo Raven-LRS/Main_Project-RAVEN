@@ -63,10 +63,11 @@ h2 {
   position: absolute;
   top: 0;
   right: 0;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 .button {
-  background-color: #ffd600;
-  color: black;
+  background-color: #022534;
+  color: #cdd8e7;
   font-size: 20px;
   font-family: "Poppins", sans-serif;
   font-weight: bold;
@@ -75,21 +76,38 @@ h2 {
   margin: 10px 400px;
   cursor: pointer;
   text-align: center;
+  background-position: center;
+  transition: background 0.8s;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
-
+.button:hover {
+  background: aqua center/15000%;
+  color:black
+}
+.button:active {
+  background-color: #6eb9f7;
+  background-size: 100%;
+  transition: background 0s;
+}
 .navbutton {
-  background-color: #161b22;
+
+  background-color: transparent;
   font-size: 20px;
   font-family: "Poppins", sans-serif;
   border-radius: 5px;
   cursor: pointer;
   text-align: center;
   margin-left: 100px;
-  color: #61dafb;
-  border: none;
+  color:white;
+  border-color:green ;
+  border:none;
+  font-weight:bolder ;
+  padding: 4px 10px;
 }
 .navbutton:hover {
   opacity: 0.5;
+  background-color: aqua;
+  color: black;
 }
 input {
   border: 2px solid black;
@@ -98,8 +116,8 @@ input {
   padding: 5px 10px;
 }
 .img {
-  width: 260px;
-  height: 150px;
+  width: 230px;
+  height: 180px;
 }
 .first {
   position: sticky;

@@ -33,13 +33,15 @@ function NFTprofile() {
     const balance = Number(await contract.methods.balanceOf(account).call());
 
     for (var i = 0; i < balance; i++) {
-      var tokenId = await contract.methods.tokenOfOwnerByIndex(account, i).call();
+      var tokenId = await contract.methods
+        .tokenOfOwnerByIndex(account, i)
+        .call();
       var tokenURI = await contract.methods.tokenURI(tokenId).call();
       var metadataRes = await fetch(`${tokenURI}`);
       var metadata = await metadataRes.json();
       tokens.push({ tokenId, tokenURI, metadata });
-      if(tokenId == val1){
-      tkdisp = i;
+      if (tokenId == val1) {
+        tkdisp = i;
       }
       console.log(tokens);
     }
@@ -67,7 +69,9 @@ function NFTprofile() {
 
   const approve = async (user_to_enable) => {
     const accounts = await web3.eth.getAccounts();
-    await contract.methods.Reg_approval(user_to_enable).send({ from: accounts[0] });
+    await contract.methods
+      .Reg_approval(user_to_enable)
+      .send({ from: accounts[0] });
   };
 
   const handle_approve = () => {
@@ -77,7 +81,9 @@ function NFTprofile() {
 
   const revoke = async (user_to_revoke) => {
     const accounts = await web3.eth.getAccounts();
-    await contract.methods.revoke_reg_approval(user_to_revoke).send({ from: accounts[0] });
+    await contract.methods
+      .revoke_reg_approval(user_to_revoke)
+      .send({ from: accounts[0] });
   };
 
   const handle_revoke = () => {
@@ -101,40 +107,39 @@ function NFTprofile() {
             name="id_1"
           />
           <br></br>
-
           <Button
-            style={{ marginLeft: "220px", marginTop: "30px" }}
+            style={{
+              marginLeft: "350px",
+              marginTop: "30px",
+              padding: "10px 40px",
+            }}
             className="button"
             onClick={handle_prof}
           >
             View Data
           </Button>
-
           <Popup
             style={{ backgroundColor: "#61dafb" }}
             trigger={btnpp1}
             setTrigger={setbtnpp1}
           >
             <div style={{ color: "black" }}>
-              <img
-                src={nftd.image}
-                class="center"
-              />
+              <img src={nftd.image} class="center" />
               <br></br>
               <label>Name:</label>
               {nftd.name}
               <br />
               <br />
-              <label>ID Number:</label>
+              <label>ID Number:</label>{nftd.id}
               <br />
               <br />
-              <label>Survey Number:</label>
+              <label>Survey Number:</label>{nftd.suevey}
               <br />
               <br />
-              <label>Size:</label>
+              <label>Size:</label>{nftd.size}
               <br />
               <br />
-              <label>Location:</label>
+              <label>Location:</label><a href={nftd.loc} target="_blank">{nftd.loc}</a>
               <br />
               <br />
 
@@ -165,6 +170,7 @@ function NFTprofile() {
                   To:
                   <input
                     ref={buyer_}
+                    style={{ marginLeft: "50px" }}
                     className="input"
                     type="text"
                     name="reciever"
@@ -172,8 +178,14 @@ function NFTprofile() {
                 </label>
                 <br></br>
                 <label>
-                  ID:
-                  <input ref={tid_} className="input" type="text" name="idno" />
+                  NFT ID:
+                  <input
+                    ref={tid_}
+                    style={{ marginLeft: "10px" }}
+                    className="input"
+                    type="text"
+                    name="idno"
+                  />
                 </label>
               </form>
               <button className="button" onClick={handle_sell}>
@@ -195,10 +207,10 @@ function NFTprofile() {
           />
           <button
             onClick={handle_approve}
-            style={{ marginTop: "30px" }}
+            style={{ marginTop: "30px", padding: "6px 20px", fontSize: "17px" }}
             className="button"
           >
-            GRANT PERMISSION
+            Approve
           </button>
           <br /> <br />
           <label>User Address :</label>
@@ -211,10 +223,10 @@ function NFTprofile() {
           />
           <button
             onClick={handle_revoke}
-            style={{ marginTop: "30px" }}
+            style={{ marginTop: "30px", padding: "6px 20px", fontSize: "17px" }}
             className="button"
           >
-            REVOKE PERMISSION
+            Revoke
           </button>
         </Card.Body>
       </Card>

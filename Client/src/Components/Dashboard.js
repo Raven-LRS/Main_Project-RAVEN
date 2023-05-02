@@ -7,15 +7,11 @@ import { Button, Card } from "react-bootstrap";
 import { nftaddress2, abi1 } from "./abi";
 import web3 from "./web3";
 
-
 function Dashboard() {
-  
-
   var tokens = [];
 
   var contract = new web3.eth.Contract(abi1, nftaddress2);
 
-  
   //------------------------------------------------------------------
   //------------------------------------------------------------------
 
@@ -27,7 +23,9 @@ function Dashboard() {
     const balance = Number(await contract.methods.balanceOf(account).call());
 
     for (var i = 0; i < balance; i++) {
-      var tokenId = await contract.methods.tokenOfOwnerByIndex(account, i).call();
+      var tokenId = await contract.methods
+        .tokenOfOwnerByIndex(account, i)
+        .call();
       var tokenURI = await contract.methods.tokenURI(tokenId).call();
       var metadataRes = await fetch(`${tokenURI}`);
       var metadata = await metadataRes.json();
@@ -35,8 +33,6 @@ function Dashboard() {
       console.log(tokens);
       // console.log(tokens[0]);
     }
-
-    
 
     document.getElementById("root1").innerHTML = tokens
       .map(createElement)
@@ -55,7 +51,6 @@ function Dashboard() {
   
 </div>`;
   }
- 
 
   return (
     <div className="home">
@@ -64,7 +59,6 @@ function Dashboard() {
 
       <Card>
         <Card.Body>
-          
           <Button
             style={{ marginLeft: "220px" }}
             className="button"
@@ -72,14 +66,11 @@ function Dashboard() {
           >
             Display the Land NFTs
           </Button>
-         
+
           <br />
           <br />
-         
-          <div id="root1">
-            
-          </div>
-         
+
+          <div style={{ marginBottom: "500px" }} id="root1"></div>
         </Card.Body>
       </Card>
     </div>

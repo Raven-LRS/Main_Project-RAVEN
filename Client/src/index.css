@@ -6,7 +6,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-image: url("./bg1.png");
+  /* background-image: url("./bg1.png"); */
+  /* background-color: #e8458b; */
+  /* background-image: linear-gradient(to bottom right, #363553,#903775,#e8458b); */
+  background-image: linear-gradient(to bottom right, #022534,#08546c,#a0bacc);
 }
 html {
   scroll-behavior: smooth;
