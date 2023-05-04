@@ -111,92 +111,84 @@ function Splitmerge(props) {
       {/* Calling all values which we
 	have stored in usestate */}
 
-      <Card style={{ marginTop: "-80px" }}>
-        <Card.Body>
-         
-          <h2>Split</h2>
-          <p className="function_detail">This function splits a NFT in case Owner wills it. NftID refers to tokrnID in smart contract.<br/>
-          Uri1,Uri2 refers to metadata of new tokens. for more refer this</p>
-          <br />
-          <label>NFT ID</label>
-          <input
-            style={{ marginLeft: "42px" }}
-            ref={inputamt}
-            type="text"
-            id="amt"
-            name="amt"
-          />
+      <h2>Split</h2>
+      <p className="function_detail">
+        This function splits a NFT in case Owner wills it. NFT ID refers to
+        tokenID in smart contract.
+        <br />
+        URI 1,URI 2 refers to metadata of new tokens. for more refer this
+      </p>
+      <br />
+      <div className="form-group">
+        <input
+          // style={{ marginLeft: "42px" }}
+          ref={inputamt}
+          type="text"
+          id="amt"
+          name="amt"
+          placeholder=" "
+          required
+        />
+        <label for="amt">NFT ID</label>
+      </div>
 
-<br></br><br></br>
-          <label>URI 1</label>
-          <input
-            style={{ marginLeft: "60px" }}
-            ref={inputamt1}
-            type="text"
-            id="amt1"
-            name="amt1"
-          />
-          <br></br><br></br>
-          {/* https://api.npoint.io/85d1c9f86870b292c0a6 */}
-          <label>URI 2</label>
-          <input
-            style={{ marginLeft: "55px" }}
-            ref={inputamt2}
-            type="text"
-            id="amt2"
-            name="amt2"
-          />
+      <div className="form-group">
+        <input
+          // style={{  }}
+          ref={inputamt1}
+          type="text"
+          id="amt1"
+          name="amt1"
+          placeholder=" "
+          required
+        />
+        <label for="amt1">URI 1</label>
+      </div>
 
-          {/* https://api.npoint.io/93f545d7fdc6a183a092 */}
-          <br />
-          <br />
-          <button className="button" onClick={handle}>
-            Split
-          </button>
-          <br />
+      {/* https://api.npoint.io/85d1c9f86870b292c0a6 */}
+      <div className="form-group">
+        <input ref={inputamt2} type="text" id="amt2" name="amt2"  placeholder=" "
+          required/>
+        <label for="amt2">URI 2</label>
+      </div>
+      {/* https://api.npoint.io/93f545d7fdc6a183a092 */}
+    
+      <button className="button" onClick={handle}>
+        Split
+      </button>
+      <br />
 
-          <h2>Merge</h2>
-          <p className="function_detail">This function merges two NFTs in case Owner wills it. NftID1, NftID2 refers to tokenID in smart contract.<br/>
-          Uri3 refers to metadata of new token. for more refer this</p>
-          <br />
-          <label>NFT ID 1</label>
-          <input
-            style={{ marginLeft: "30px" }}
-            ref={inputamt3}
-            type="text"
-            id="amt3"
-            name="amt3"
-          />
+      <h2>Merge</h2>
+      <p className="function_detail">
+        This function merges two NFTs in case Owner wills it. NftID1, NftID2
+        refers to tokenID in smart contract.
+        <br />
+        Uri3 refers to metadata of new token. for more refer this
+      </p>
+      <br />
+      <div className="form-group">
+        <input ref={inputamt3} type="text" id="amt3" name="amt3" placeholder=" "
+          required />
+        <label for="amt3">NFT ID 1</label>
+      </div>
 
-          <br></br><br></br>
-          <label>NFT ID 2</label>
-          <input
-            style={{ marginLeft: "25px" }}
-            ref={inputamt4}
-            type="text"
-            id="amt4"
-            name="amt4"
-          />
+      <div className="form-group">
+        <input ref={inputamt4} type="text" id="amt4" name="amt4"  placeholder=" "
+          required/>
+        <label for="amt4">NFT ID 2</label>
+      </div>
 
-          <br></br><br></br>
-          <label>URI 3</label>
-          <input
-            style={{ marginLeft: "54px" }}
-            ref={inputamt5}
-            type="text"
-            id="amt5"
-            name="amt5"
-          />
+      <div className="form-group">
+        <input ref={inputamt5} type="text" id="amt5" name="amt5" placeholder=" "
+          required />
+        <label for="amt5">URI 3</label>
+      </div>
 
-          <br />
-          <br />
-          <button className="button" onClick={handle1}>
-            Merge
-          </button>
-          <br />
-          <br />
-        </Card.Body>
-      </Card>
+      <button className="button" onClick={handle1}>
+        Merge
+      </button>
+      <br />
+      <br />
     </div>
   );
 }

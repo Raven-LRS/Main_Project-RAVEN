@@ -58,107 +58,145 @@ function Metadata() {
       <form onSubmit={handleSubmit}>
         <div className="subhead">
           <h3>NFT Metadata</h3>
-          <p className="function_detail">Metadata can be feed to this form to create a metadata file which can be stored in cloud to nft uri. for more refer this</p>
-          <br/>
+          <p className="function_detail">
+            Metadata can be feed to this form to create a metadata file which
+            can be stored in cloud to nft uri. for more refer this
+          </p>
+          <br />
         </div>
-        <label>
-          Name:
+        <div className="form-group">
           <input
-            style={{ marginLeft: "125px" }}
+  
             type="text"
             name="name"
+            id="namee"
             onChange={handleChange}
+            placeholder=" "
+            required
           />
-        </label>
-        <br></br>
-        <br></br>
-        <label>
-          ID Number:
-          <input
-            style={{ marginLeft: "70px" }}
+          <label for="namee">Name:</label>
+        </div>
+        <div className="form-group">
+        <input
+          
             type="text"
             name="id"
+            id="idd"
             onChange={handleChange}
+            placeholder=" "
+            required
           />
+        <label for="idd">
+          ID Number:
+         
         </label>
-        <br></br>
-        <br></br>
-        <label>
-          Survey Number:
-          <input
-            style={{ marginLeft: "20px" }}
+        </div>
+        <div className="form-group">
+        <input
+  
             type="text"
             name="survey"
             onChange={handleChange}
+            placeholder=" "
+            required
           />
-        </label>
-        <br></br>
-        <br></br>
         <label>
-          Size:
-          <input
-            style={{ marginLeft: "150px" }}
+          Survey Number:
+        
+        </label>
+       </div>
+       <div className="form-group">
+       <input
+          id="sizee"
             type="text"
             name="size"
             onChange={handleChange}
+            placeholder=" "
+            required
           />
+        <label for="sizee">
+          Size:
+        
         </label>
-        <br></br>
-        <br></br>
-        <label>
+       </div>
+       <div className="form-group">
+       <input
+          id="locc"
+          type="text"
+          name="loc"
+          onChange={handleChange}
+          placeholder=" "
+          required
+        />
+        <label for="locc">
           Location:
-          <input
-            style={{ marginLeft: "100px" }}
-            type="text"
-            name="loc"
-            onChange={handleChange}
-          />
+         
         </label>
-        <br></br>
-        <br></br>
-        <label>
-          Image URI:
-          <input
-            style={{ marginLeft: "80px" }}
+        </div>
+        <div className="form-group">
+        <input
+           id="imgg"
             type="text"
             name="image"
             onChange={handleChange}
+            placeholder=" "
+            required
           />
-        </label> <br />
-      <br></br>
+        <label for="imgg">
+          Image URI:
+         
+        </label>
+      </div>
         <button className="button" type="submit">
           Submit
         </button>
       </form>
       <br />
       <br />
+      <a
+        style={{ color: "white" }}
+        href="https://www.npoint.io/"
+        target="_blank"
+      >
+        Host a NFT
+      </a>
       <div className="subhead">
         <h3>NFT Minter</h3>
-        <p className="function_detail">Generated uri and address of the nft owner is given to create new Nft. for more refer this</p>
+        <p className="function_detail">
+          Generated uri and address of the nft owner is given to create new Nft.
+          for more refer this
+        </p>
       </div>
-      
-      <label>
-        Address:
-        <input
-          style={{ marginLeft: "125px" }}
+      <div className="form-group">
+      <input
+          
           type="text"
           ref={inputadd}
           name="address"
+          id="addd"
+          placeholder=" "
+          required
         />
+      <label for="addd">
+        Address:
+       
       </label>
-      <br />
-      <br></br>
-      <label>
-        URI:
-        <input
-          style={{ marginLeft: "175px" }}
+      </div>
+      <div className="form-group">
+      <input
+         
           type="text"
           ref={inputuri}
           name="uri"
+          id="urii"
+          placeholder=" "
+          required
         />
+      <label for="urii">
+        URI:
+       
       </label>
-      <br />
-      <br />
+      </div>
       <button className="button" onClick={handlemint}>
         Mint
       </button>
