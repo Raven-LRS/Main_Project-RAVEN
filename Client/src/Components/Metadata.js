@@ -60,13 +60,13 @@ function Metadata() {
           <h3>NFT Metadata</h3>
           <p className="function_detail">
             Metadata can be feed to this form to create a metadata file which
-            can be stored in cloud to nft uri. for more refer this
+            can be stored in cloud to NFT URI
           </p>
           <br />
         </div>
-        <div className="form-group">
+        <div className="form-group" >
           <input
-  
+            style={{ width: "60%" }}
             type="text"
             name="name"
             id="namee"
@@ -76,77 +76,54 @@ function Metadata() {
           />
           <label for="namee">Name:</label>
         </div>
-        <div className="form-group">
-        <input
-          
-            type="text"
-            name="id"
-            id="idd"
-            onChange={handleChange}
-            placeholder=" "
-            required
-          />
-        <label for="idd">
-          ID Number:
-         
-        </label>
-        </div>
-        <div className="form-group">
-        <input
-  
+
+        <div className="form-group" >
+          <input
+            style={{ width: "60%"}}
             type="text"
             name="survey"
             onChange={handleChange}
             placeholder=" "
             required
           />
-        <label>
-          Survey Number:
-        
-        </label>
-       </div>
-       <div className="form-group">
-       <input
-          id="sizee"
+          <label>Survey Number:</label>
+        </div>
+        <div className="form-group" >
+          <input
+            style={{ width: "60%" }}
+            id="sizee"
             type="text"
             name="size"
             onChange={handleChange}
             placeholder=" "
             required
           />
-        <label for="sizee">
-          Size:
-        
-        </label>
-       </div>
-       <div className="form-group">
-       <input
-          id="locc"
-          type="text"
-          name="loc"
-          onChange={handleChange}
-          placeholder=" "
-          required
-        />
-        <label for="locc">
-          Location:
-         
-        </label>
+          <label for="sizee">Size:</label>
+        </div>
+        <div className="form-group" >
+          <input
+            style={{ width: "60%" }}
+            id="locc"
+            type="text"
+            name="loc"
+            onChange={handleChange}
+            placeholder=" "
+            required
+          />
+          <label for="locc">Location:</label>
         </div>
         <div className="form-group">
-        <input
-           id="imgg"
+          <input
+            style={{ width: "60%" }}
+            id="imgg"
             type="text"
             name="image"
             onChange={handleChange}
             placeholder=" "
             required
           />
-        <label for="imgg">
-          Image URI:
-         
-        </label>
-      </div>
+          <label for="imgg">Image URI:</label>
+        </div>
         <button className="button" type="submit">
           Submit
         </button>
@@ -164,12 +141,12 @@ function Metadata() {
         <h3>NFT Minter</h3>
         <p className="function_detail">
           Generated uri and address of the nft owner is given to create new Nft.
-          for more refer this
+         
         </p>
       </div>
       <div className="form-group">
-      <input
-          
+        <input
+          style={{ width: "60%"}}
           type="text"
           ref={inputadd}
           name="address"
@@ -177,14 +154,11 @@ function Metadata() {
           placeholder=" "
           required
         />
-      <label for="addd">
-        Address:
-       
-      </label>
+        <label for="addd">Address:</label>
       </div>
       <div className="form-group">
-      <input
-         
+        <input
+         style={{ width: "60%"}}
           type="text"
           ref={inputuri}
           name="uri"
@@ -192,10 +166,7 @@ function Metadata() {
           placeholder=" "
           required
         />
-      <label for="urii">
-        URI:
-       
-      </label>
+        <label for="urii">URI:</label>
       </div>
       <button className="button" onClick={handlemint}>
         Mint

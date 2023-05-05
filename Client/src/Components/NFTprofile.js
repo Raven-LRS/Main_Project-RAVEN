@@ -1,7 +1,7 @@
 // Importing modules
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../App.css";
-import { Button, Card } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { nftaddress2, abi1 } from "./abi";
 import web3 from "./web3";
 import { useRef } from "react";
@@ -95,7 +95,7 @@ function NFTprofile() {
     <div className="home">
       {/* Calling all values which we
 	have stored in usestate */}
-      <div className="form-group">
+      <div className="form-group"  style={{marginLeft:'150px'}}>
         <input
           ref={prof1}
           type="text"
@@ -125,29 +125,35 @@ function NFTprofile() {
         <div style={{ color: "black" }}>
           <img src={nftd.image} class="center" />
           <br></br>
-          <p>Name:</p>
-          {nftd.name}
-          <br />
-          <br />
-          <p>ID Number:</p>
+          <div style={{ display: "inline-block" }}>Name:</div>
+          <div style={{ display: "inline-block", marginLeft: "20px" }}>
+           
+            {nftd.name}
+          </div>
+          <br /> <br />
+          <div style={{ display: "inline-block" }}>
+          ID Number:</div>
+          <div style={{ display: "inline-block", marginLeft: "20px" }}></div>
           {nftd.id}
           <br />
           <br />
-          <p>Survey Number:</p>
-          {nftd.suevey}
+          <div style={{ display: "inline-block" }}>Survey Number:</div>
+          <div style={{ display: "inline-block", marginLeft: "30px" }}>
+          {nftd.survey}</div>
           <br />
           <br />
-          <p>Size:</p>
+          <div style={{ display: "inline-block" }}>Size:</div>
+          <div style={{ display: "inline-block", marginLeft: "60px" }}>
           {nftd.size}
-          <br />
-          <br />
-          <p>Location:</p>
+          <br /></div>
+          <br /> <br />
+          <div style={{ display: "inline-block" }}>Location:</div>
+          <div style={{ display: "inline-block" }}>
           <a href={nftd.loc} target="_blank">
             {nftd.loc}
-          </a>
+          </a></div>
           <br />
           <br />
-
           <button
             onClick={() => setbtnpp2(true)}
             style={{ marginTop: "30px" }}
@@ -194,8 +200,8 @@ function NFTprofile() {
       <hr style={{ width: "80%", marginLeft: "-30px" }}></hr>
       <br></br>
       <h2 style={{ marginLeft: "300px" }}>Registrar Consent</h2>
-      <p className="function_detail">
-        Registrar has to give his approval to initiate modification in Nft. for
+      <p className="function_detail" style={{marginLeft:'-300px'}}>
+        Registrar has to give his approval to initiate modification in NFT. for
         more refer this
       </p>
       <br />
@@ -207,7 +213,7 @@ function NFTprofile() {
           name="id_1"
           placeholder=" "
           required
-        />  
+        />
         <label for="id_1">User Address :</label>
       </div>
       <button
