@@ -42,12 +42,12 @@ function Dashboard() {
   };
 
   function createElement(token) {
-    return ` <div>
+    return ` <div >
   	
   	<img src="${token.metadata.image}" width="100" height="100"/>
 	<h2 style="margin-left: 220px;margin-top:-60px">#${token.tokenId} ${token.metadata.name}</h2>
 	
-	<hr style="width: 85%;margin-left: -80px"/>
+	<hr style="width: 70%;margin-left: -80px;color:blue"/>
   
 </div>`;
   }
@@ -70,7 +70,7 @@ function Dashboard() {
           <br />
           <br />
 
-          <div style={{ marginBottom: "500px" }} id="root1"></div>
+          <div style={{ marginBottom: "500px",marginLeft:'100px' }} id="root1"></div>
         </Card.Body>
       </Card>
     </div>

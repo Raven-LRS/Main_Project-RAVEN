@@ -19,6 +19,7 @@
   text-align: left;
   max-width: 950px;
   margin: 0 auto;
+  margin-left: 230px;
   /* border: 1px solid #e6e6e6; */
   padding: 40px 25px;
 
@@ -63,7 +64,7 @@ h2 {
   position: absolute;
   top: 0;
   right: 0;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .button {
   background-color: #022534;
@@ -72,17 +73,17 @@ h2 {
   font-family: "Poppins", sans-serif;
   font-weight: bold;
   padding: 10px 100px;
-  border-radius: 5px;
+  border-radius: 30px;
   margin: 10px 400px;
   cursor: pointer;
   text-align: center;
   background-position: center;
   transition: background 0.8s;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .button:hover {
   background: aqua center/15000%;
-  color:black
+  color: black;
 }
 .button:active {
   background-color: #6eb9f7;
@@ -90,7 +91,6 @@ h2 {
   transition: background 0s;
 }
 .navbutton {
-
   background-color: transparent;
   font-size: 20px;
   font-family: "Poppins", sans-serif;
@@ -98,10 +98,10 @@ h2 {
   cursor: pointer;
   text-align: center;
   margin-left: 100px;
-  color:white;
-  border-color:green ;
-  border:none;
-  font-weight:bolder ;
+  color: white;
+  border-color: green;
+  border: none;
+  font-weight: bolder;
   padding: 4px 10px;
 }
 .navbutton:hover {
@@ -114,6 +114,7 @@ input {
   border-radius: 2px;
   width: 25%;
   padding: 5px 10px;
+  background-color: transparent;
 }
 .img {
   width: 230px;
@@ -126,14 +127,49 @@ input {
   color: pink;
 }
 
-.input {
+/* .input {
   margin: 5px 100px;
   position: relative;
+} */
+
+label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #aaa;
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+}
+
+input {
+  /* margin: 5px 100px;
+  position: relative; */
+  width: 40%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 1px solid #ccc;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label {
+  top: -1rem;
+  font-size: 0.8rem;
+  color: #007bff;
+}
+
+input:focus {
+  outline: none;
+  border-color: #007bff;
 }
 /* .App-link {
   color: #61dafb;
 } */
-
+.form-group {
+  position: relative;
+  margin-bottom: 2rem;
+  margin-left: 150px
+}
 .card {
   width: "18rem";
 }
@@ -144,10 +180,26 @@ input {
   width: 50%;
 }
 
-.function_detail{
-  font-family: "Abril Fatface";
+.function_detail {
+  font-family: 'Quicksand', sans-serif;
   font-size: 18px;
-  color:white;
-  font-weight:bold;
-  font-style: italic;
+  color: white;
+  font-weight: bold;
+ 
+  text-align: center;
+}
+/* .label {
+  display: inline-block;
+  width: 200px;
+} */
+
+#box {
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 40px;
+  padding: 50px;
+  width: 65%;
+  margin-left: 0px;
+  background-color: hsla(195, 53%, 79%,0.2);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
