@@ -199,10 +199,10 @@ function NFTprofile() {
       <br></br>
       <hr style={{ width: "80%", marginLeft: "-30px" }}></hr>
       <br></br>
-      <h2 style={{ marginLeft: "300px" }}>Registrar Consent</h2>
-      <p className="function_detail" style={{marginLeft:'-300px'}}>
-        Registrar has to give his approval to initiate modification in NFT. for
-        more refer this
+      <div id="box" style={{padding: "40px" }}>
+      <h2 style={{ marginLeft: "240px" }}>Registrar Consent</h2>
+      <p className="function_detail">
+        Registrar has to give his approval to initiate modification in NFT
       </p>
       <br />
       <div className="form-group">
@@ -241,7 +241,7 @@ function NFTprofile() {
         className="button"
       >
         Revoke
-      </button>
+      </button></div>
     </div>
   );
 }

@@ -64,7 +64,8 @@ function Metadata() {
           </p>
           <br />
         </div>
-        <div className="form-group" >
+      <div style={{marginLeft:'70px'}}>
+        <div className="form-group">
           <input
             style={{ width: "60%" }}
             type="text"
@@ -77,9 +78,9 @@ function Metadata() {
           <label for="namee">Name:</label>
         </div>
 
-        <div className="form-group" >
+        <div className="form-group">
           <input
-            style={{ width: "60%"}}
+            style={{ width: "60%" }}
             type="text"
             name="survey"
             onChange={handleChange}
@@ -88,7 +89,7 @@ function Metadata() {
           />
           <label>Survey Number:</label>
         </div>
-        <div className="form-group" >
+        <div className="form-group">
           <input
             style={{ width: "60%" }}
             id="sizee"
@@ -100,7 +101,7 @@ function Metadata() {
           />
           <label for="sizee">Size:</label>
         </div>
-        <div className="form-group" >
+        <div className="form-group">
           <input
             style={{ width: "60%" }}
             id="locc"
@@ -123,54 +124,61 @@ function Metadata() {
             required
           />
           <label for="imgg">Image URI:</label>
-        </div>
-        <button className="button" type="submit">
+        </div></div>
+        <button style={{ width: "30%" }}className="button" type="submit">
           Submit
         </button>
       </form>
       <br />
       <br />
-      <a
-        style={{ color: "white" }}
-        href="https://www.npoint.io/"
-        target="_blank"
-      >
-        Host a NFT
-      </a>
-      <div className="subhead">
-        <h3>NFT Minter</h3>
-        <p className="function_detail">
-          Generated uri and address of the nft owner is given to create new Nft.
-         
-        </p>
+      <div style={{ textAlign: "center" }}>
+        <a
+          style={{ color: "white", textAlign: "center" }}
+          href="https://www.npoint.io/"
+          target="_blank"
+        >
+          Host NFT
+        </a>{" "}
+        <br />
+        <br />
       </div>
-      <div className="form-group">
-        <input
-          style={{ width: "60%"}}
-          type="text"
-          ref={inputadd}
-          name="address"
-          id="addd"
-          placeholder=" "
-          required
-        />
-        <label for="addd">Address:</label>
+      <div id="box" style={{ marginLeft: "120px", padding: "60px" }}>
+        <div className="subhead">
+          <h3 style={{ marginLeft: "-150px" }}>NFT Minter</h3>
+          <p style={{ marginLeft: "-150px" }} className="function_detail">
+            Generated URI and address of the NFT owner is given to create new
+            NFT.
+          </p>
+          <br />
+        </div>
+        <div className="form-group">
+          <input
+            style={{ width: "60%" }}
+            type="text"
+            ref={inputadd}
+            name="address"
+            id="addd"
+            placeholder=" "
+            required
+          />
+          <label for="addd">Address:</label>
+        </div>
+        <div className="form-group">
+          <input
+            style={{ width: "60%" }}
+            type="text"
+            ref={inputuri}
+            name="uri"
+            id="urii"
+            placeholder=" "
+            required
+          />
+          <label for="urii">URI:</label>
+        </div>
+        <button style={{ marginLeft: "300px",padding: "7px 50px"}}className="button" onClick={handlemint}>
+          Mint
+        </button>
       </div>
-      <div className="form-group">
-        <input
-         style={{ width: "60%"}}
-          type="text"
-          ref={inputuri}
-          name="uri"
-          id="urii"
-          placeholder=" "
-          required
-        />
-        <label for="urii">URI:</label>
-      </div>
-      <button className="button" onClick={handlemint}>
-        Mint
-      </button>
     </div>
   );
 }

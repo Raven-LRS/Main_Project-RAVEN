@@ -35,9 +35,10 @@ h2 {
   padding: 15px;
   font-family: "Poppins", sans-serif;
   font-weight: bold;
-  color: white;
+  color: aqua;
   text-align: center;
   margin-left: -182px;
+  
 }
 
 .subhead {
@@ -142,8 +143,7 @@ label {
 }
 
 input {
-  /* margin: 5px 100px;
-  position: relative; */
+  color: white;
   width: 40%;
   padding: 0.5rem;
   font-size: 1rem;
@@ -155,12 +155,12 @@ input:focus + label,
 input:not(:placeholder-shown) + label {
   top: -1rem;
   font-size: 0.8rem;
-  color: #007bff;
+  color: aqua;
 }
 
 input:focus {
   outline: none;
-  border-color: #007bff;
+  border-color: aqua;
 }
 /* .App-link {
   color: #61dafb;
