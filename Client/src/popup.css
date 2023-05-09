@@ -29,5 +29,5 @@
   border: none;
 }
 .close-btn:hover {
-  background-color: lightblue;
+  opacity: 0.3;
 }

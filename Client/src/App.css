@@ -38,7 +38,6 @@ h2 {
   color: aqua;
   text-align: center;
   margin-left: -182px;
-  
 }
 
 .subhead {
@@ -65,7 +64,7 @@ h2 {
   position: absolute;
   top: 0;
   right: 0;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 .button {
   background-color: #022534;
@@ -106,9 +105,7 @@ h2 {
   padding: 4px 10px;
 }
 .navbutton:hover {
-  opacity: 0.5;
-  background-color: aqua;
-  color: black;
+  color: aqua;
 }
 input {
   border: 2px solid black;
@@ -168,7 +165,7 @@ input:focus {
 .form-group {
   position: relative;
   margin-bottom: 2rem;
-  margin-left: 150px
+  margin-left: 150px;
 }
 .card {
   width: "18rem";
@@ -181,11 +178,11 @@ input:focus {
 }
 
 .function_detail {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-size: 18px;
   color: white;
   font-weight: bold;
- 
+
   text-align: center;
 }
 /* .label {
@@ -200,6 +197,7 @@ input:focus {
   padding: 50px;
   width: 65%;
   margin-left: 0px;
-  background-color: hsla(195, 53%, 79%,0.2);
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  background-color: hsla(195, 53%, 79%, 0.2);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
