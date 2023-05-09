@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { ethers } from "ethers";
 import "../App.css";
-
+import { FiCopy } from 'react-icons/fi';
 export default function Header() {
+  const [add, setadd] = useState("ClickAgain");
   const [data, setdata] = useState({
     address: null,
     Balance: null,
@@ -15,11 +16,13 @@ export default function Header() {
       window.ethereum
         .request({ method: "eth_requestAccounts" })
         .then((res) => accountChangeHandler(res[0]));
+
       console.log("connected");
     } else {
       alert("install metamask extension!!");
     }
-    setlog("LOGOUT");
+
+    // setlog(`${add.slice(0,5)}...${add.slice(-5)}`);
   };
 
   const getbalance = (address) => {
@@ -35,7 +38,6 @@ export default function Header() {
           Balance: ethers.utils.formatEther(balance),
         });
       });
-      
   };
 
   // Function for getting handling all events
@@ -45,13 +47,18 @@ export default function Header() {
       address: account,
     });
     console.log(account);
+    setadd(account);
+    setlog(`${add.slice(0, 5)}...${add.slice(-5)}`);
 
     // Setting a balance
     getbalance(account);
   };
-
+  // function rel(){
+  //   location.reload()
+  // }
 
   //-------
+
   return (
     <>
       <img
@@ -66,6 +73,13 @@ export default function Header() {
       </div>
       <button onClick={btnhandler} className="log">
         {log}
+      </button>
+      <button className="log" style={{padding:'1px',border:'none',marginInlineStart:'3px'}}
+        onClick={() => {
+          navigator.clipboard.writeText(add);
+        }}
+      >
+        <FiCopy/>
       </button>
     </>
   );

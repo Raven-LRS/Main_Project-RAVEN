@@ -125,29 +125,29 @@ function NFTprofile() {
         <div style={{ color: "black" }}>
           <img src={nftd.image} class="center" />
           <br></br>
-          <div style={{ display: "inline-block" }}>Name:</div>
-          <div style={{ display: "inline-block", marginLeft: "20px" }}>
+          <div style={{ display: "inline-block" }}>Name :</div>
+          <div style={{ display: "inline-block", marginLeft: "6px" }}>
            
-            {nftd.name}
+            { nftd.name}
           </div>
           <br /> <br />
           <div style={{ display: "inline-block" }}>
-          ID Number:</div>
-          <div style={{ display: "inline-block", marginLeft: "20px" }}></div>
+          ID :</div>
+          <div style={{ display: "inline-block", marginLeft: "6px" }}></div>
           {nftd.id}
           <br />
           <br />
-          <div style={{ display: "inline-block" }}>Survey Number:</div>
-          <div style={{ display: "inline-block", marginLeft: "30px" }}>
-          {nftd.survey}</div>
+          <div style={{ display: "inline-block" }}>Survey No. :</div>
+          <div style={{ display: "inline-block", marginLeft: "5px" }}>
+          { nftd.survey}</div>
           <br />
           <br />
-          <div style={{ display: "inline-block" }}>Size:</div>
-          <div style={{ display: "inline-block", marginLeft: "60px" }}>
+          <div style={{ display: "inline-block" }}>Size :</div>
+          <div style={{ display: "inline-block", marginLeft: "10px" }}>
           {nftd.size}
           <br /></div>
           <br /> <br />
-          <div style={{ display: "inline-block" }}>Location:</div>
+          <div style={{ display: "inline-block" }}>Location :</div>
           <div style={{ display: "inline-block" }}>
           <a href={nftd.loc} target="_blank">
             {nftd.loc}
