@@ -69,7 +69,7 @@ export default function Header() {
       />
 
       <div className="head">
-        <h1>RAVEN</h1>
+        <h1 style={{fontFamily: 'Bruno Ace SC'}}>RAVEN</h1>
       </div>
       <button onClick={btnhandler} className="log">
         {log}

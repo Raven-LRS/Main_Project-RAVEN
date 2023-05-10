@@ -170,6 +170,7 @@ function NFTprofile() {
               <input
                 ref={buyer_}
                 className="input"
+                style={{color:"black"}}
                 type="text"
                 name="reciever"
                 id="too"
@@ -182,6 +183,7 @@ function NFTprofile() {
               <input
                 ref={tid_}
                 className="input"
+                style={{color:"black"}}
                 type="text"
                 name="idno"
                 id="nfti"
