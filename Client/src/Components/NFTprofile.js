@@ -131,12 +131,6 @@ function NFTprofile() {
             { nftd.name}
           </div>
           <br /> <br />
-          <div style={{ display: "inline-block" }}>
-          ID :</div>
-          <div style={{ display: "inline-block", marginLeft: "6px" }}></div>
-          {nftd.id}
-          <br />
-          <br />
           <div style={{ display: "inline-block" }}>Survey No. :</div>
           <div style={{ display: "inline-block", marginLeft: "5px" }}>
           { nftd.survey}</div>
