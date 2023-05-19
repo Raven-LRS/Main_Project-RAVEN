@@ -18,7 +18,8 @@ export default function Home() {
       
       <p>The Land Registrar can create Land NFTs through Create NFT tab</p>
       <p style={{ color: "#ffd600", marginLeft: "70px" }}>Nft Metadata:</p>
-      <p style={{ marginLeft: "90px" }}>User can create a JSON file locally and then save it in npoint to generate uri link </p>
+      <p style={{ marginLeft: "90px" }}>User can create a JSON file locally and then save it in npoint to generate uri link.
+       Note that json file will be stored in "C:/Users/Public/"</p>
       <p style={{ color: "#ffd600", marginLeft: "70px" }}>Nft Minter:</p>
       <ul style={{ marginLeft: "110px" }}>
         <li>Address - represents for owner of the NFT</li>
