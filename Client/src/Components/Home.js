@@ -7,8 +7,8 @@ export default function Home() {
 
       <h1>The Decentralised Land Record System </h1><br></br>
        
-      <h2 style={{ color: "#ffd600" }}>Requiremnets to use</h2>
-      <p>User must have metamask extension enabled in thier Browser. 
+      <h2 style={{ color: "#ffd600" }}>Requirements to use</h2>
+      <p>User must have metamask extension enabled in their Browser. 
         And it should be changed to <strong>Sepolia testnet</strong> for smooth transaction</p>
       <br></br>
       <h2 style={{ color: "#ffd600" }}>Login</h2>
